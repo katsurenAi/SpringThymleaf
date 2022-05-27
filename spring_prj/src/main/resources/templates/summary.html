@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>TODO</title>
+</head>
+<body>
+<h1>やることリスト</h1>
+<h3>投稿</h3>
+<form  th:action="@{/diary/add}" method="post">
+<input type="text" name="newdiary">
+<button type="submit">投稿</button>
+</form>
+
+<form th:action="@{/diary/desc}" method="post">
+<input type="submit" value="降順"/>
+</form>
+<form th:action="@{/diary/asc}" method="post">
+<input type="submit" value="昇順"/>
+</form>
+
+
+<table>
+    <tr><th>TODO</th><th>投稿日時</th><th></th><th></th></tr>
+    <tr th:each="diary : ${diarys}">
+    <td th:text="${diary.bodytext}"></td>
+    <td th:text="${diary.createDatetime}"></td>
+    <td><a th:href="@{/diary/edit(id=${diary.id})}" class="btn btn-primary">編集</a></td>
+    <td>
+    <form th:action="@{/diary/delete}" method="post">
+    <input type="hidden" name="id" th:value="${diary.id}"/>
+    <input type="submit" value="削除"/>
+    </form>
+    </td>
+    </tr>
+</table>
+
+</form>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+
+</tr>
+</tbody>
+</table>
+</body>
+</html>

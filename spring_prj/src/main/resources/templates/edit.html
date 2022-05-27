@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>やることリストの編集</title>
+</head>
+<h1>やることリストの編集</h1>
+<<<<<<< HEAD
+
+<form th:action="@{/todo/update}" th:object="${editTodo}" method="post">
+<input type="text" name="bodytext" th:value="${editTodo.bodytext}"  class="form-control mb-2">
+<input type="hidden" name="id" th:value="${editTodo.id}"/>
+<button type="submit" class="btn btn-primary">更新する</button><br/><br/>
+
+<a href="/todo/summary">日記一覧に戻る</a>
+=======
+<form th:action="@{/diary/update}" method="post">
+<input type="text" name="updateddiary" th:value="${editdiary.bodytext}"  class="form-control mb-2">
+<input type="hidden" name="id" th:value="${editdiary.id}"/>
+<button type="submit" class="btn btn-primary">更新する</button><br/><br/>
+<a href="/diary/summary">日記一覧に戻る</a>
+>>>>>>> parent of e80dc3e (更新処理の追加とメソッド名・変数名の変更)
+</form>
+</body>
+</html>
