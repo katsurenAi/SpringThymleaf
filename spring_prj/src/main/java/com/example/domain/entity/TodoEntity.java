@@ -12,19 +12,13 @@ import javax.persistence.*;
  */
 @Entity
 @Data
-<<<<<<< HEAD
 @NoArgsConstructor//コンストラクタに引数なしでもコンストラクタを生成できる＝デフォルト
 @AllArgsConstructor//コンストラクタ作成＝引数あり
 //@Table(name = "diary")	//↓のコンストラクタは不要
-=======
-@NoArgsConstructor
-@AllArgsConstructor
-//@Table(name = "diary")	//指定しないと生成されるテーブルはクラス名と同じdiary
->>>>>>> parent of e80dc3e (更新処理の追加とメソッド名・変数名の変更)
 public class TodoEntity {
     // ID
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
 
     // テキスト

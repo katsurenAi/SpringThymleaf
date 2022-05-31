@@ -6,19 +6,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import com.example.domain.entity.TodoEntity;
 import com.example.domain.service.TodoService;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.example.domain.dto.TodoForm;
-<<<<<<< HEAD
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-=======
 
->>>>>>> parent of e80dc3e (更新処理の追加とメソッド名・変数名の変更)
 @Controller
 @RequestMapping("diary")
 public class TodoContoroller {
@@ -56,7 +50,6 @@ public class TodoContoroller {
    }
 
     //やることリストのUPDATE
-<<<<<<< HEAD
     @PostMapping("update")
     public Object update(@RequestBody MultiValueMap<Integer,String> multiValueMap) {
       TodoForm todoForm = new TodoForm(Integer.valueOf(multiValueMap.toSingleValueMap().get("id").toString()),
@@ -64,14 +57,6 @@ public class TodoContoroller {
       todoService.save(todoForm);
       return "redirect:/todo/summary";
     }
-=======
->>>>>>> parent of e80dc3e (更新処理の追加とメソッド名・変数名の変更)
-
-
-
-
-
-
     
     //降順
     @PostMapping("desc")

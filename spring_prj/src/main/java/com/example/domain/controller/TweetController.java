@@ -8,8 +8,6 @@ import java.util.Map;
 
 import com.example.domain.entity.TweetEntity;
 import com.example.domain.service.TweetService;
-
-import org.springframework.ui.Model;
 /**
  * アカウント情報に対してのリクエストを処理します
  */
